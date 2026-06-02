@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Spark &amp; the Map of Everywhere</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- The 3D world lives here -->
+  <canvas id="stage"></canvas>
+
+  <!-- Loading veil -->
+  <div id="loader">
+    <div class="spark-pulse"></div>
+    <p>waking up the universe…</p>
+  </div>
+
+  <!-- Story overlay (HTML on top of the 3D, so text stays crisp & readable) -->
+  <div id="ui" class="hidden">
+    <header id="topbar">
+      <div id="booktitle">✦ Spark &amp; the Map of Everywhere</div>
+      <div id="dots" aria-label="chapter progress"></div>
+      <button id="monographBtn" title="Study Monograph">📖 Study Monograph</button>
+      <button id="muteBtn" title="sound on/off">🔊</button>
+    </header>
+
+    <div id="chapterTag"></div>
+
+    <div id="panel">
+      <h2 id="narrTitle"></h2>
+      <p id="narrText"></p>
+      
+      <div id="goalContainer" class="hidden">
+        <div id="goalHeader">
+          <span id="goalLabel">Goal: Loading...</span>
+          <span id="goalStatus">0/3</span>
+        </div>
+        <div id="goalProgressWrapper">
+          <div id="goalBar"></div>
+        </div>
+      </div>
+
+      <div id="hint"></div>
+      <div id="controls">
+        <button id="prevBtn" title="back (←)">◀ back</button>
+        <button id="nextBtn" title="next (→ / space)">next ▶</button>
+      </div>
+    </div>
+
+    <!-- Sliding Monograph Sidebar -->
+    <div id="monographSidebar" class="closed">
+      <header id="sidebarHeader">
+        <h3>📖 Monograph Study</h3>
+        <button id="closeMonographBtn" title="Close Sidebar">×</button>
+      </header>
+      <div id="monographContent">
+        <!-- Chapter-specific mathematical content from natesbook.md -->
+      </div>
+    </div>
+
+    <div id="helpHint">drag to look · scroll to zoom · arrows / space to read on</div>
+  </div>
+
+  <noscript>
+    <div style="color:#fff;padding:2rem;font-family:sans-serif">
+      This interactive book needs JavaScript turned on. ✨
+    </div>
+  </noscript>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
