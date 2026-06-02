@@ -23,7 +23,6 @@ friendly little guide named **Spark**.
 ## Running
 
 ```bash
-cd book
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
@@ -35,3 +34,4 @@ Needs `http://` (not `file://`) for ES modules + Three.js CDN.
 - UnrealBloomPass for glow
 - WebAudio API for zero-asset sound effects
 - All scenes: additive point clouds + sprite glows
+
